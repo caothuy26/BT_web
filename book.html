@@ -82,15 +82,15 @@
             <div class="form">
                 <form>
                     Họ và tên:<br>
-                    <input type="text" name="name"><br>
+                    <input type="text" name="name" placeholder="Nhập họ tên..."><br>
                     SĐT:<br>
-                    <input type="text" name="phoneNumber"><br>
+                    <input type="text" name="phoneNumber" placeholder="Nhập số điện thoại..."><br>
                     Email:<br>
-                    <input type="email" name="email"><br>
+                    <input type="email" name="email" placeholder="Nhập email..."><br>
                     Số lượng người lớn:<br>
-                    <input type="number" name="oldNumber" min="0"><br>
+                    <input type="number" name="oldNumber" min="0" placeholder="Chọn số lượng người lớn..."><br>
                     Số lượng trẻ em:<br>
-                    <input type="number" name="yNumber" min="0"><br>
+                    <input type="number" name="yNumber" min="0" placeholder="Chọn số lượng trẻ em..."><br>
                     Ngày đến:<br>
                     <input type="date" name="date"><br>
                     Giờ:<br>
@@ -103,7 +103,7 @@
                     <input type="radio" name="event">Khác
                     <br>
                     Ghi chú:<br>
-                    <textarea cols="35" rows="7" placeholder="Ghi chú" name="note"></textarea>
+                    <textarea cols="35" rows="7" placeholder="Ghi chú..." name="note"></textarea>
                     <br><button class="submit-btn" id="bt">Xác nhận</button><br>
                 </form>
             </div> 
@@ -207,6 +207,7 @@
                 }
             }
             $(".right-layout__sub-list--has-book").on("click","div#del",function(){
+                if(confirm("Bạn chắc chắn muốn xóa lịch đặt bàn này") == true){
                 $(this).parent().parent().remove()
                 flag--;
                 if (flag == 0) {
@@ -218,6 +219,7 @@
                     document.querySelector('.right-layout__sub-list--no-book').style.display = 'none'
                     document.querySelector('.right-layout__sub-list--has-book').style.display = 'block'
                 }
+            }
             });
             rightBtn.onclick = function(){
                 if (flag == 0) {
